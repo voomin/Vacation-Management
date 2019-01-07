@@ -1,0 +1,95 @@
+doctype html
+html
+  head
+    meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+    title 휴가 신청
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    // ===============================================================================================
+    link(rel='icon', type='image/png', href='images/icons/favicon.ico')
+    // ===============================================================================================
+    link(rel='stylesheet', type='text/css', href='vendor/bootstrap/css/bootstrap.min.css')
+    // ===============================================================================================
+    link(rel='stylesheet', type='text/css', href='fonts/font-awesome-4.7.0/css/font-awesome.min.css')
+    // ===============================================================================================
+    link(rel='stylesheet', type='text/css', href='vendor/animate/animate.css')
+    // ===============================================================================================
+    link(rel='stylesheet', type='text/css', href='vendor/css-hamburgers/hamburgers.min.css')
+    // ===============================================================================================
+    link(rel='stylesheet', type='text/css', href='vendor/select2/select2.min.css')
+    // ===============================================================================================
+    link(rel='stylesheet', type='text/css', href='css/util.css')
+    link(rel='stylesheet', type='text/css', href='css/common.css')
+    link(rel='stylesheet', type='text/css', href='css/student.css')
+    // ===============================================================================================
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+    script(language='javascript').
+      window.onload = function(){
+      var date = new Date();
+      var year = date.getFullYear();
+      var month = new String(date.getMonth()+1);
+      var day = new String(date.getDate());
+      // 한자리수일 경우 0을 채워준다.
+      if(month.length == 1){
+      month = "0" + month;
+      }
+      if(day.length == 1){
+      day = "0" + day;
+      }
+      //document.getElementById("myNowData").value = year + "-" + month + "-" + day;
+      }
+      function showPopup() {
+      window.open("SignPage", "서명입력창",
+      "width=300, height=130, left=500, top=50 resizable=no, scrollbars=no, status=no");
+      }
+      function changeImg(s) {
+      $('#mySign').attr("src",s);
+      $("input[name=mySign_src]").val(s);
+      mySign.src = s;
+      $('.enter').val("등록하기");
+      $('.enter').get(0).type = 'submit';
+      }
+  body
+    .limiter
+      .container-login100
+        .wrap-login100
+          include menu_student.pug
+          .right-view
+            form(form='', action='RestCheck', method='post', name='userinput')
+              h4 휴가 신청
+              hr
+              table.report
+                tr
+                  td 휴가 날짜 
+                  td
+                    input(type='date', name='date')
+                tr
+                  td 휴가 사유 
+                  td
+                    input(type='text', name='reason')
+                tr
+                  td 학생 서명
+                  td
+                    img#mySign(src='images/sign.png', onclick='showPopup();')
+                tr
+                  td
+                    input(type='hidden', name='mySign_src', value='')
+                tr
+                  td(colspan='2')
+                    input.enter(type='Button', value='등록하기 전에 서명을 완료해주세요.')
+    // ===============================================================================================
+    script(src='vendor/jquery/jquery-3.2.1.min.js')
+    // ===============================================================================================
+    script(src='vendor/bootstrap/js/popper.js')
+    script(src='vendor/bootstrap/js/bootstrap.min.js')
+    // ===============================================================================================
+    script(src='vendor/select2/select2.min.js')
+    // ===============================================================================================
+    script(src='vendor/tilt/tilt.jquery.min.js')
+    script.
+      $(".m1:nth-child(2) .m2").hide();
+      $('.js-tilt').tilt({
+      scale: 1.1
+      })
+    // ===============================================================================================
+    script(src='js/student.js')

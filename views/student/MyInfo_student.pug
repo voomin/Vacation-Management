@@ -1,0 +1,88 @@
+doctype html
+html
+  head
+    title 학생 정보 수정
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    // ===============================================================================================
+    link(rel='icon', type='image/png', href='images/icons/favicon.ico')
+    // ===============================================================================================
+    link(rel='stylesheet', type='text/css', href='vendor/bootstrap/css/bootstrap.min.css')
+    // ===============================================================================================
+    link(rel='stylesheet', type='text/css', href='fonts/font-awesome-4.7.0/css/font-awesome.min.css')
+    // ===============================================================================================
+    link(rel='stylesheet', type='text/css', href='vendor/animate/animate.css')
+    // ===============================================================================================
+    link(rel='stylesheet', type='text/css', href='vendor/css-hamburgers/hamburgers.min.css')
+    // ===============================================================================================
+    link(rel='stylesheet', type='text/css', href='vendor/select2/select2.min.css')
+    // ===============================================================================================
+    link(rel='stylesheet', type='text/css', href='css/util.css')
+    link(rel='stylesheet', type='text/css', href='css/common.css')
+    link(rel='stylesheet', type='text/css', href='css/student.css')
+    // ===============================================================================================
+  body
+    .limiter
+      .container-login100
+        .wrap-login100
+          include menu_student.pug
+          .right-view
+            form(action='StudentUpdate', method='post')
+              h4 나의 정보
+              hr
+              table
+                tr
+                  td 과목명 
+                  td
+                    input(type='text', name='sub_name', value=select_result[0].sub_name, placeholder='입력 해주세요.' readonly)
+                tr
+                  td 학생 이름 
+                  td
+                    input(type='text', name='stu_name', value=select_result[0].stu_name, placeholder='성+이름' readonly)
+                tr
+                  td 학생 번호 
+                  td
+                    input(type='text', name='stu_number', value=select_result[0].stu_number, placeholder='학번' readonly)
+                tr
+                  td 학생 비밀번호 
+                  td
+                    input(type='text', name='stu_password', value='', placeholder='입력 해주세요.')
+                tr
+                  td 학생 생년월일 
+                  td
+                    input(type='text', name='stu_birthday', value=select_result[0].stu_birthday, placeholder='YYYY-MM-DD')
+                tr
+                  td 학생 주소 
+                  td
+                    input(type='text', name='stu_addr', value=select_result[0].stu_addr, placeholder='주거지역 주소')
+                tr
+                  td 학생 전화번호 
+                  td
+                    input(type='text', name='stu_phone', value=select_result[0].stu_phone,placeholder='Tel.')
+                tr
+                  td 학생 사용가능 휴가일 수 
+                  td
+                    input(type='text', name='available_rest', value=select_result[0].available_rest, placeholder='입력 해주세요.' readonly)
+                tr
+                  td 학생 사용한 휴가일 수 
+                  td
+                    input(type='text', name='used_rest', value=select_result[0].used_rest, placeholder='입력 해주세요.' readonly)
+                tr
+                  td(colspan='2')
+                    input.enter(type='submit', value='수정하기')
+    // ===============================================================================================
+    script(src='vendor/jquery/jquery-3.2.1.min.js')
+    // ===============================================================================================
+    script(src='vendor/bootstrap/js/popper.js')
+    script(src='vendor/bootstrap/js/bootstrap.min.js')
+    // ===============================================================================================
+    script(src='vendor/select2/select2.min.js')
+    // ===============================================================================================
+    script(src='vendor/tilt/tilt.jquery.min.js')
+    script.
+      $('.js-tilt').tilt({
+      scale: 1.1
+      })
+    // ===============================================================================================
+    script(src='js/student.js')
+    // ===============================================================================================

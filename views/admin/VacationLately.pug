@@ -1,0 +1,66 @@
+doctype html
+html
+  head
+    title AdminPage
+    include head_admin.pug
+  body
+    .limiter
+      .container-login100
+        .wrap-login100
+          include menu_admin.pug
+          .right-view
+            if(select_result.length==0)
+              .vacation-null 신청된 휴가가 존재하지 않습니다...
+            else
+              each val,index in select_result
+                .vacation
+                  | #{val.stu_name}님이 휴가를 신청하였습니다.
+                  span.cancle
+                    input(type='image', src='images/cancle.png', style='width:30px;height:30px', onclick="submit('"+val.stu_number+"',"+val.rest_index+",2,this)")
+                  span.consent
+                    input(type='image', src='images/consent.png', style='width:30px;height:30px;', onclick="submit('"+val.stu_number+"',"+val.rest_index+",1,this)")
+                  .info
+                    hr
+                    table
+                      tr
+                        td 신청 번호
+                        td 수강 과목
+                        td 학생 번호
+                        td 학생 이름
+                        td 휴가 신청일
+                        td 휴가일
+                        td 휴가 회차
+                        td 휴가 이유
+                        td 학생 서명
+                      tr
+                        td #{val.rest_index}
+                        td #{val.sub_name}
+                        td #{val.stu_number}
+                        td #{val.stu_name}
+                        td #{val.rest_request_date}
+                        td #{val.rest_date}
+                        td #{val.rest_num+1}회
+                        td #{val.rest_reason}
+                        td
+                          img(src=val.stu_check, width='100', height='30')
+    include foot_admin.pug
+    script.
+      var select_M1_index=2;
+      $('.js-tilt').tilt({
+      scale: 1.1
+      })
+      function submit(stu_number,rest_index,val,element) {
+        
+        $.ajax({
+          type: "POST",
+          url: (val==1)?"RestConsent":"RestCancle",
+          contentType: "application/x-www-form-urlencoded; charset=utf-8",
+          data: { "restIndex": rest_index,"stu_number":stu_number}
+        })
+        $(element).parents('.vacation').remove();
+        if($('.vacation').length==0)
+          $('.right-view').html("<div class='vacation-null'> 신청된 휴가가 존재하지 않습니다...</div>");
+      }
+    // ===============================================================================================
+    script(src='js/admin.js')
+    // ===============================================================================================

@@ -1,0 +1,119 @@
+/*------------------------------------------------------------------
+[ table & restReport ]*/
+.right-view form{
+  text-align: center;
+}
+.right-view form h4{
+  font-weight: bold;
+  text-align: center;
+  line-height: 100px;
+}
+.right-view form table{
+  width:100%;
+  margin :20px;
+}
+.right-view form table td{
+  text-align: left;
+  font-weight: bold;
+  padding-bottom:40px;
+  vertical-align: top;
+}
+.right-view td img{
+	max-width:170px;
+  	cursor: pointer;
+}
+.right-view .report td input{
+  font-size:14px;
+  font-weight: normal;
+  padding :10px;
+  border:1px solid #ddd;
+}
+.right-view .enter{
+  width:80%;
+  cursor: pointer;
+  margin:30px;
+  border-radius: 10px;
+  height:50px;
+  background-color: white;
+}
+.right-view input[type="submit"]{
+  background-color: #33CC33;
+	color:white;
+	font-weight:bold;
+}
+input[name="sign"]{
+  width:150px;
+}
+textarea[name="rest_content"]{
+  border:1px solid #ddd;
+  width:400px;
+  height:100px;
+}
+/*------------------------------------------------------------------
+[ StudentPage.html ]*/
+.right-view .head-line{
+  text-align: center;
+  margin:80px;
+}
+.head-line .day{
+  font-size:180px;
+  background: linear-gradient(to right, #120d0c, #2b0b5e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.head-line .info{
+  color:#ddd;
+}
+.right-view .rest-logs{
+  text-align:center;
+  color:#aaa;
+}
+.rest-logs table{
+  width:100%;
+}
+.rest-logs table th{
+  text-align:center;
+}
+.rest-logs table td,th{
+  padding:20px;
+}
+.rest-logs table tr:nth-child(1){
+  color:#333;
+}
+
+/*------------------------------------------------------------------
+[ MyInfoStudent.html ]*/
+.right-view form{
+  text-align: center;
+}
+.right-view form h4{
+  font-weight: bold;
+  text-align: center;
+}
+.right-view form table{
+  width:100%;
+  margin :20px;
+}
+.right-view form table td{
+  text-align: left;
+  font-weight: bold;
+  padding-bottom:20px;
+}
+.right-view td input{
+  font-size:14px;
+  font-weight: normal;
+  padding :10px;
+  border:1px solid #ddd;
+}
+input[name="sub_name"]{
+  width:300px;
+}
+input[name="stu_name"]{
+  width:100px;
+}
+input[name="stu_birthday"]{
+  width:150px;
+}
+input[name="stu_addr"]{
+  width:400px;
+}

@@ -1,0 +1,59 @@
+html
+  head
+    title 학생 등록
+    include head_admin.pug
+  body
+    .limiter
+      .container-login100
+        .wrap-login100
+          include menu_admin.pug
+          .right-view
+            form(action='insertStudent', method='post')
+              h4 학생 등록
+              hr
+              table
+                tr
+                  td 수강 과목
+                  td
+                    select(name='sub_name')
+                      each val,index in select_result
+                        option(value=val.sub_name) #{val.sub_name}
+                tr
+                  td 학생 이름
+                  td
+                    input(type='text', name='stu_name', placeholder='성+이름')
+                tr
+                  td 학생 번호
+                  td
+                    input(type='text', name='stu_number', placeholder='학번')
+                tr
+                  td 학생 비밀번호
+                  td
+                    input(type='text', name='stu_password', value='1111', readonly='readOnly', placeholder='입력 해주세요.')
+                tr
+                  td 학생 생년월일
+                  td
+                    input(type='date', name='stu_birthday')
+                tr
+                  td 학생 주소
+                  td
+                    input(type='text', name='stu_addr', placeholder='주거지역 주소')
+                tr
+                  td 학생 전화번호
+                  td
+                    input(type='text', name='phone1', maxlength='3', size='2')
+                    |  - 
+                    input(type='text', name='phone2', maxlength='4', size='3')
+                    |  - 
+                    input(type='text', name='phone3', maxlength='4', size='3')
+                tr
+                  td(colspan='2')
+                    input(type='submit', value='등록하기')
+    include foot_admin.pug
+    script.
+      var select_M1_index=1;
+      $('.js-tilt').tilt({
+      scale: 1.1
+      })
+    // ===============================================================================================
+    script(src='js/admin.js')

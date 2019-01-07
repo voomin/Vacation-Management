@@ -1,0 +1,35 @@
+doctype html
+html
+  head
+    title AdminInfo
+    include head_admin.pug
+  body
+    .limiter
+      .container-login100
+        .wrap-login100
+          include menu_admin.pug
+          .right-view
+            form(action='AdminUpdate', method='post')
+              h4 관리자 정보 보기
+              hr
+              table
+                tr
+                  td 이름 
+                  td
+                    input(type='text', name='stu_name', value=name, placeholder='성+이름' readonly)
+                tr
+                  td 비밀번호 
+                  td
+                    input(type='password', name='stu_password', placeholder='입력해주세요..')
+                tr
+                  td(colspan='2')
+                    input(type='submit', value='수정하기')
+    include foot_admin.pug
+    script.
+      var select_M1_index=0;
+      $('.js-tilt').tilt({
+      scale: 1.1
+      })
+    // ===============================================================================================
+    script(src='js/admin.js')
+    // ===============================================================================================

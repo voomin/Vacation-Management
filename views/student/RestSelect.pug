@@ -1,0 +1,90 @@
+doctype html
+html
+  head
+    title StudentPage
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    // ===============================================================================================
+    link(rel='icon', type='image/png', href='images/icons/favicon.ico')
+    // ===============================================================================================
+    link(rel='stylesheet', type='text/css', href='vendor/bootstrap/css/bootstrap.min.css')
+    // ===============================================================================================
+    link(rel='stylesheet', type='text/css', href='fonts/font-awesome-4.7.0/css/font-awesome.min.css')
+    // ===============================================================================================
+    link(rel='stylesheet', type='text/css', href='vendor/animate/animate.css')
+    // ===============================================================================================
+    link(rel='stylesheet', type='text/css', href='vendor/css-hamburgers/hamburgers.min.css')
+    // ===============================================================================================
+    link(rel='stylesheet', type='text/css', href='vendor/select2/select2.min.css')
+    // ===============================================================================================
+    link(rel='stylesheet', type='text/css', href='css/util.css')
+    link(rel='stylesheet', type='text/css', href='css/common.css')
+    link(rel='stylesheet', type='text/css', href='css/student.css')
+    // ===============================================================================================
+  body
+    .limiter
+      .container-login100
+        .wrap-login100
+          include menu_student.pug
+          .right-view
+            .head-line
+              span.day #{available_rest}
+              span.info 일 남았습니다..
+            hr
+            .rest-logs
+              if(select_result.length==0)
+                h3 휴가 신청 내역이 없습니다.
+              else
+                table 
+                  tr
+                    td
+                      | 신청 번호
+                    td
+                      | 휴가신청일
+                    td
+                      | 휴가일
+                    td
+                      | 휴가 회차
+                    td
+                      | 휴가 사유
+                    td
+                      | 학생 서명
+                    td
+                      | 승인 여부
+                  each val,index in select_result
+                    tr
+                      td
+                        | #{val.rest_index}
+                      td
+                        | #{val.rest_request_date}
+                      td
+                        | #{val.rest_date}
+                      td
+                        | #{val.rest_num+1}회
+                      td
+                        | #{val.rest_reason}
+                      td
+                        img(src=val.stu_check)
+                      td
+                        if(val.verified==0)
+                          | 대기중..
+                        else if(val.verified==1)
+                          | 승인
+                        else if(val.verified==2)
+                          | 반려
+    // ===============================================================================================
+    script(src='vendor/jquery/jquery-3.2.1.min.js')
+    // ===============================================================================================
+    script(src='vendor/bootstrap/js/popper.js')
+    script(src='vendor/bootstrap/js/bootstrap.min.js')
+    // ===============================================================================================
+    script(src='vendor/select2/select2.min.js')
+    // ===============================================================================================
+    script(src='vendor/tilt/tilt.jquery.min.js')
+    script.
+      $('.js-tilt').tilt({
+      scale: 1.1
+      })
+    // ===============================================================================================
+    script(src='js/student.js')
+    // ===============================================================================================

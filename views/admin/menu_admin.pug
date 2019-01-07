@@ -1,0 +1,27 @@
+.left-menu
+  .profile
+    a(href='MyInfo_admin')
+      h2 관리자
+    a(href='logout')
+      | logout
+  hr
+  .menu
+    .m1
+      | 학생관리
+      ul.m2
+        li
+          a(href='StudentAdd') 학생등록
+        li
+          a(href='StudentSelect') 학생조회
+    .m1
+      | 휴가 관리
+      ul.m2
+        li
+          a(href='VacationLately') 최근 신청 내역
+        li
+          a(href='VacationSelect') 휴가내역조회
+    .m1
+      | 과목 관리
+      ul.m2
+        li
+          a(href='SubjectAdd') 과목 추가

@@ -1,0 +1,37 @@
+html
+  head
+    title 과목 등록
+    include head_admin.pug
+  body
+    .limiter
+      .container-login100
+        .wrap-login100
+          include menu_admin.pug
+          .right-view
+            form(action='insertSubject', method='post')
+              h4 과목 추가
+              hr
+              table
+                tr
+                  td 과목명 
+                  td
+                    input(type='text', name='sub_name', placeholder='입력 해주세요.')
+                tr
+                  td 개강 날짜 
+                  td
+                    input(type='date', name='start_day')
+                tr
+                  td 종강 날짜 
+                  td
+                    input(type='date', name='end_day')
+                tr
+                  td(colspan='2')
+                    input(type='submit', value='등록하기')
+    include foot_admin.pug
+    script.
+      var select_M1_index=3;
+      $('.js-tilt').tilt({
+      scale: 1.1
+      })
+    // ===============================================================================================
+    script(src='js/admin.js')

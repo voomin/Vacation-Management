@@ -1,0 +1,127 @@
+
+
+/*------------------------------------------------------------------
+[ studentAdd.html ]*/
+.right-view form{
+  text-align: center;
+}
+.right-view form h4{
+  font-weight: bold;
+  text-align: center;
+  line-height: 100px;
+}
+.right-view form table{
+  width:100%;
+  margin :20px;
+}
+.right-view form table td{
+  text-align: left;
+  font-weight: bold;
+  padding-bottom:20px;
+}
+.right-view td input{
+  font-size:14px;
+  font-weight: normal;
+  padding :10px;
+  border:1px solid #ddd;
+}
+.right-view td input[type="submit"]{
+  width:80%;
+  cursor: pointer;
+  margin:30px;
+  border-radius: 10px;
+  background-color: white;
+}
+input[name="sub_name"]{
+  width:300px;
+}
+input[name="stu_name"]{
+  width:100px;
+}
+input[name="stu_birthday"]{
+  width:150px;
+}
+input[name="stu_addr"]{
+  width:400px;
+}
+/*------------------------------------------------------------------
+[ vacation.html ]*/
+.right-view .title{
+  text-align: center;
+  margin: 50px 50px 0px 50px;
+}
+.right-view .title img{
+  width:100px;
+}
+.search{
+  float:right;
+  vertical-align: bottom;
+}
+.search .btn img{
+  width:20px;
+  cursor: pointer;
+}
+.board th{
+  cursor: pointer;
+  border-radius: 10px;
+  border-bottom:1px solid #eee;
+  text-align: center;
+  color:#333;
+}
+.board tr.select{
+  background-color: #eee
+}
+.board tr:nth-child(1).select{
+  background-color: white;
+}
+.board th.select{
+  background-color: #57b846;
+}
+.board table{
+  margin:60px 0px 30px 0px;
+  text-align: center;
+  width:100%;
+}
+.board .bottom{
+  text-align:center;
+}
+/*------------------------------------------------------------------
+[ adminpage.html ]*/
+.right-view .vacation{
+  background: #F6F5F5;
+  border-radius: 10px;
+  margin-bottom:5px;
+  padding: 10px 20px 10px 20px;
+  cursor: pointer;
+}
+.vacation.select{
+  background: #EDEBEB;
+}
+.vacation .info{
+  display:none;
+}
+.vacation span{
+  float:right;
+  display:none;
+  width:70px;
+}
+.vacation span .msg{
+  position: absolute;
+  background: #fff;
+  border-radius: 10px;
+  padding:0px 10px 0px 10px;
+}
+.vacation span img{
+  width:30px;
+}
+.vacation .info table{
+  text-align: center;
+  width: 100%;
+}
+.vacation-null{
+  text-align: center;
+  margin:110px;
+  font-size:36px;
+  color:#777;
+
+}

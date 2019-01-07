@@ -1,0 +1,44 @@
+doctype html
+html
+  head
+    title 학생 조회
+    include head_admin.pug
+  body
+    .limiter
+      .container-login100
+        .wrap-login100
+          include menu_admin.pug
+          .right-view
+            .title
+              img(src='images/students.png')
+            input.search(placeholder='search')
+            .board
+              table
+                tr
+                  th 학생 번호
+                  th 학생 이름
+                  th 수강 과목
+                  th 생일
+                  th 주소
+                  th 전화번호
+                  th 사용 가능한 휴가
+                  th 사용한 휴가
+                each val,index in select_result
+                  tr
+                    td #{val.stu_number}
+                    td #{val.stu_name}
+                    td #{val.sub_name}
+                    td #{val.stu_birthday}
+                    td #{val.stu_addr}
+                    td #{val.stu_phone}
+                    td #{val.available_rest}
+                    td #{val.used_rest}
+              .vacation-null(style='display: none') 검색된 내용이 존재하지 않습니다.
+    include foot_admin.pug
+    script.
+      var select_M1_index=1;
+      $('.js-tilt').tilt({
+      scale: 1.1
+      })
+    // ===============================================================================================
+    script(src='js/admin.js')
